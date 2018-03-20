@@ -4,7 +4,7 @@ XML支持 </br>
 1.circleWidth 圆环的宽度 </br>
 2.circleAngle 圆环的进度 </br>
 3.backgroundColor 圆环的默认背景颜色</br>
-代码支持 
+代码支持 </br>
 1.setCircleWidth 圆环宽度（DP） </br>
 2.setColorArray 圆环的渐变颜色数组 </br>
 3.例如:int[] colorArray = new int[]{Color.parseColor("#27B197"), Color.parseColor("#00A6D5")};</br>
