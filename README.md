@@ -9,7 +9,7 @@
 2.setColorArray 圆环的渐变颜色数组
 3.例如:
 ```Java
-int[] colorArray = new int[]{Color.parseColor(&quot;#27B197&quot;), Color.parseColor(&quot;#00A6D5&quot;)};
+int[] colorArray = new int[]{Color.parseColor(&quot;#27B197&quot;), Color.parseColor(&quot;#00A6D5&quot;)};//Java
 ```
 4.如果数组长度为1 那么默认颜色为填充全部无渐变效果
 5.setProgress 设置圆环进度（添加由快到慢的插值器）
