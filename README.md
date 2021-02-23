@@ -13,3 +13,4 @@ int[] colorArray = new int[]{Color.parseColor(&quot;#27B197&quot;), Color.parseC
 5.setProgress 设置圆环进度（添加由快到慢的插值器）
 </code></pre>
 
+![](https://github.com/732275239/CircleProgress/blob/master/0223_1.jpg?raw=true)
