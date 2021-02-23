@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CircleProgress.iml" filepath="$PROJECT_DIR$/.idea/modules/CircleProgress.iml" group="CircleProgress" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CircleProgress-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CircleProgress-app.iml" group="CircleProgress/app" />
       <module fileurl="file://$PROJECT_DIR$/Circle_Progress_Bar.iml" filepath="$PROJECT_DIR$/Circle_Progress_Bar.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
