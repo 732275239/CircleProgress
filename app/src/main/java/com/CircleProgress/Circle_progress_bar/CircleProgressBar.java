@@ -30,6 +30,7 @@ public class CircleProgressBar extends View {
     private Paint circlePaint;
     private Paint textPaint;
     private int[] colorArray = new int[]{Color.parseColor("#27B197"), Color.parseColor("#00A6D5")};
+    private int shadowColor = Color.parseColor("#E2E0DE");
 
     public CircleProgressBar(Context context) {
         this(context, null);
@@ -43,7 +44,7 @@ public class CircleProgressBar extends View {
         super(context, attrs, defStyleAttr);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.CircleProgressBar);
         //底色亮灰色
-        backgroundcolor = typedArray.getColor(R.styleable.CircleProgressBar_backgroundColor, Color.LTGRAY);
+        backgroundcolor = typedArray.getColor(R.styleable.CircleProgressBar_backgroundColor, Color.parseColor("#C6C7C9"));
         //默认圆弧宽度6dp
         circlewidth = typedArray.getDimensionPixelOffset(R.styleable.CircleProgressBar_circleWidth, 6);
         //进度
@@ -84,6 +85,7 @@ public class CircleProgressBar extends View {
         int paddingTop = getPaddingTop();
         int paddingBottom = getPaddingBottom();
         circlePaint.setShader(null);//清除上一次的状态
+        circlePaint.setColor(backgroundcolor);
         circlePaint.setStyle(Paint.Style.STROKE);//空心圆
         canvas.drawCircle(center, center, radius - paddingLeft, circlePaint);
         RectF oval = new RectF(); // 圆的外接正方形
@@ -96,7 +98,7 @@ public class CircleProgressBar extends View {
         LinearGradient linearGradient = new LinearGradient(circlewidth, circlewidth,
                 getMeasuredWidth() - circlewidth, getMeasuredHeight() - circlewidth, colorArray, null, Shader.TileMode.REPEAT);
         circlePaint.setShader(linearGradient);
-        circlePaint.setShadowLayer(10, 0, 0, Color.RED);
+        circlePaint.setShadowLayer(10, 0, 0, shadowColor);//阴影色
         circlePaint.setColor(backgroundcolor); // 设置圆弧背景的颜色
         circlePaint.setStrokeCap(Paint.Cap.ROUND); // 圆弧头尾改成圆角的
         alphaAngle = currentValue * 360.0f / maxValue * 1.0f;//计算圆弧角度（进度）
@@ -144,6 +146,15 @@ public class CircleProgressBar extends View {
         invalidate();
     }
 
+    /**
+     *  设置圆环周围的阴影颜色
+     * @param color
+     */
+
+    public void setShadowColor(int color){
+        this.shadowColor = color;
+        invalidate();
+    }
     /**
      * 按进度显示百分比
      *
